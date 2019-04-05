@@ -22,6 +22,10 @@ module.exports = {
       {
         test: /\.s[ac]ss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader'
       }
     ]
   },

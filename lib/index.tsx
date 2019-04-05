@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from './button';
+import Icon from './components/icon/icon';
 
-ReactDOM.render(<Button/>, document.querySelector('#app'));
+ReactDOM.render(<Icon name="alipay"/>, document.querySelector('#app'));
