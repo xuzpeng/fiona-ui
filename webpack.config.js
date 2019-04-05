@@ -14,11 +14,16 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
   module: {
-    rules: [{
-      test: /\.tsx?$/,
-      loader: 'awesome-typescript-loader',
-      exclude: /node_modules/
-    }]
+    rules: [
+      {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader'
+      }, 
+      {
+        test: /\.s[ac]ss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      }
+    ]
   },
   plugins: [
     new CheckerPlugin()
