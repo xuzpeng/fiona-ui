@@ -2,7 +2,6 @@ const path = require('path');
 const {
   CheckerPlugin
 } = require('awesome-typescript-loader')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './lib/index.tsx',
@@ -22,10 +21,6 @@ module.exports = {
     }]
   },
   plugins: [
-    new CheckerPlugin(),
-    new HtmlWebpackPlugin({
-      template: './index.html',
-      title: 'fiona-ui'
-    })
+    new CheckerPlugin()
   ]
 }
