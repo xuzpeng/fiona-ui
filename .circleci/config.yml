@@ -51,7 +51,6 @@ jobs:
           at: .
       - run: npm config set //registry.npmjs.org/:_authToken $FIONA_TOKEN
       - run: npm publish
-      
 
 
 
