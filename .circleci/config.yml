@@ -49,7 +49,7 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+      - run: npm config set //registry.npmjs.org/:_authToken $FIONA_TOKEN
       - run: npm publish
       
 
@@ -69,8 +69,8 @@ workflows:
       - publish:
           requires:
             - build
-          # filters:
-          #   tags:
-          #     only: /^v[0-9]+(\.[0-9]+)*/
-          #   branches:
-          #     ignore: /.*/
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
