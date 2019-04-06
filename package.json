@@ -1,8 +1,12 @@
 {
   "name": "fiona-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a react ui framework",
-  "main": "index.js",
+  "main": "dist/lib/index",
+  "types": "dist/lib/index",
+  "files": [
+    "/dist/**/*"
+  ],
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
