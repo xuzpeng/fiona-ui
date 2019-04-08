@@ -1,2 +1,9 @@
 @import './reset.scss';
 @import './mixin.scss';
+.main-content {
+  display: flex;
+  flex-direction: row;
+  &-left {
+    width: 240px;
+  }
+}

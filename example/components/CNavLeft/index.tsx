@@ -1,11 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react';
 
-export default class CNavLeft extends Component {
+interface IProps {
+  className?: string;
+}
+
+export default class CNavLeft extends Component<IProps> {
   render() {
     return (
-      <div>
+      <Fragment>
         CNavLeft
-      </div>
+      </Fragment>
     )
   }
 }

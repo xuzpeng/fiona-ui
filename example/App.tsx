@@ -8,9 +8,13 @@ export default class App extends Component {
     return (
       <div>
         <CHeader />
-        <main>
-          <CNavLeft />
-          {this.props.children}
+        <main className="main-content">
+          <div className="main-content-left">
+            <CNavLeft/>
+          </div>
+          <div className="main-content-right">
+            {this.props.children}
+          </div>
         </main>
       </div>
     )
