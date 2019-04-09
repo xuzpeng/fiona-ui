@@ -3,7 +3,7 @@
 .main-content {
   display: flex;
   flex-direction: row;
-  &-left {
-    width: 240px;
+  &-right {
+    padding: 40px;
   }
 }

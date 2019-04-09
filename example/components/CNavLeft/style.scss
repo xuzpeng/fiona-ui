@@ -1,0 +1,22 @@
+.nav-left {
+  width: 280px;
+  box-sizing: border-box;
+  padding-left: 40px;
+  border-right: 1px solid #ccc;
+  height: calc(100vh - 64px);
+  h3 {
+    padding: 20px 16px;
+    color: rgba(0,0,0,0.45);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+  ul {
+    padding-left: 40px;
+    font-size: 14px;
+    li {
+      padding: 10px 0;
+    }
+  }
+}
