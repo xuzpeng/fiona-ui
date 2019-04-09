@@ -1,6 +1,5 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { menuList } from '../../config/menuConfig';
-// const menuList = require('../../config/menuConfig').menuList;
 import './style.scss';
 
 interface IProps {
