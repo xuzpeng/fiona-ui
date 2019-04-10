@@ -15,14 +15,13 @@ export default class IRouter extends Component<IProps, IState> {
       <HashRouter>
         <App>
           <Switch>
-            <Route exact path="/components" component={({match}: any) => (
+            <Route path="/components" component={({match}: any) => (
               <Switch>
                 <Route path={`${match.url}/button`} component={Button} />
                 <Route path={`${match.url}/icon`} component={Icon} />
               </Switch>
             )} />
-            <Route exact path="/" render={() => (<Redirect to="/components/button" />)} /> 
-            {/* <Redirect to="/components/button" /> */}
+            <Redirect to="/components/button" />
           </Switch>
         </App>
       </HashRouter>
