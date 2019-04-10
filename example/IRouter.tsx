@@ -5,11 +5,7 @@ import Button from './pages/button';
 import Icon from './pages/icon';
 import App from './App';
 
-interface IProps { }
-
-interface IState { }
-
-export default class IRouter extends Component<IProps, IState> {
+export default class IRouter extends Component {
   render() {
     return (
       <HashRouter>

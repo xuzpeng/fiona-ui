@@ -27,7 +27,7 @@ export default class CNavLeft extends Component<IProps> {
           </ul>
         </div>
       } else {
-        return <Link key={menuItem.key} to={menuItem.key}>
+        return <Link replace key={menuItem.key} to={menuItem.key}>
           <li>{menuItem.title}</li>
         </Link>
       }
