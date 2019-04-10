@@ -1,5 +1,11 @@
 @import './reset.scss';
 @import './mixin.scss';
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
 .main-content {
   display: flex;
   flex-direction: row;

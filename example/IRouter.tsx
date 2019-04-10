@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
-import Home from './pages/home';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
+// import Home from './pages/home';
+import Button from './pages/button';
+import Icon from './pages/icon';
 import App from './App';
 
 interface IProps { }
@@ -13,7 +15,14 @@ export default class IRouter extends Component<IProps, IState> {
       <HashRouter>
         <App>
           <Switch>
-            <Route path="/" component={Home} />
+            <Route exact path="/components" component={({match}: any) => (
+              <Switch>
+                <Route path={`${match.url}/button`} component={Button} />
+                <Route path={`${match.url}/icon`} component={Icon} />
+              </Switch>
+            )} />
+            <Route exact path="/" render={() => (<Redirect to="/components/button" />)} /> 
+            {/* <Redirect to="/components/button" /> */}
           </Switch>
         </App>
       </HashRouter>
