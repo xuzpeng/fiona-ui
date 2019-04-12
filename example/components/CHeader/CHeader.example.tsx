@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style.scss';
+import './CHeader.example.scss';
 
 export default class CHeader extends Component {
   render() {

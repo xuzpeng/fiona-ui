@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { menuList } from '../../config/menuConfig';
 import { Link } from 'react-router-dom';
-import './style.scss';
+import './CNavLeft.example.scss';
 
 interface IProps {
   className?: string;

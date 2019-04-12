@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FButton from '../../../lib/components/button/button';
-import './style.scss';
+import './button.example.scss';
 
 export default class Button extends Component {
   render() {

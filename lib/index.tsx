@@ -1,2 +1,2 @@
-export { default as FIcon } from './components/icon/icon';
-export { default as FButton } from './components/button/button';
+export { default as Icon } from './components/icon/icon';
+export { default as Button } from './components/button/button';

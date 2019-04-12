@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import './botton.scss';
 import combineClass from '../../helpers/combineClass';
 
-interface FButtonProps {
+interface ButtonProps {
   type?: string;
   className?: string;
 }
 
-export default class FButton extends Component<FButtonProps> {
+export default class Button extends Component<ButtonProps> {
   static propTypes: { 
     type: PropTypes.Requireable<string>; 
     className: PropTypes.Requireable<string>; 
@@ -21,11 +21,11 @@ export default class FButton extends Component<FButtonProps> {
   }
 }
 
-FButton.propTypes = {
+Button.propTypes = {
   type: PropTypes.string,
   className: PropTypes.string
 }
 
-FButton.defaultProps = {
+Button.defaultProps = {
   type: 'default'
 }

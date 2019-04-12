@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CHeader from './components/CHeader';
-import CNavLeft from './components/CNavLeft';
+import CHeader from './components/CHeader/CHeader.example';
+import CNavLeft from './components/CNavLeft/CNavLeft.example';
 import './style/index.scss';
 
 export default class App extends Component {
