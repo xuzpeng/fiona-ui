@@ -10,6 +10,10 @@ export const menuList: Array<any> = [
       {
         title: 'Icon 图标',
         key: '/components/icon'
+      },
+      {
+        title: 'Dialog 对话框',
+        key: '/components/dialog'
       }
     ]
   }
