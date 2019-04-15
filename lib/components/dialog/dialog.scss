@@ -1,0 +1,21 @@
+.f-dialog {
+  width: 10em;
+  height: 10em;
+  background-color: #fff;
+  position: absolute;
+  &-mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7)
+  }
+  &-center {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

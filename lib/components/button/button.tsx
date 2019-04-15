@@ -16,7 +16,7 @@ export default class Button extends Component<ButtonProps> {
   static defaultProps: {};
   render() {
     return (
-      <button className={combineClass(`f-button-${this.props.type}`, this.props.className)}>{this.props.children}</button>
+      <button className={combineClass(`f-button f-button-${this.props.type}`, this.props.className)}>{this.props.children}</button>
     )
   }
 }
