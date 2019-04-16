@@ -6,7 +6,7 @@ export default () => {
   const [x, setx] = useState(false);
   return (
     <div>
-      <button onClick={() => setx(!x)}>click</button>
+      <FButton onClick={() => setx(!x)}>打开dialog对话框</FButton>
       <Dialog 
         onClose={() => setx(false)}
         visible={x} 
