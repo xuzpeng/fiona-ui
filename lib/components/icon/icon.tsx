@@ -3,11 +3,11 @@ import './importIcons';
 import './icon.scss';
 import combineClass from '../../helpers/combineClass';
 
-interface IconProps extends React.SVGAttributes<SVGElement> {
+interface IProps extends React.SVGAttributes<SVGElement> {
   name: string;
 }
 
-const Icon: React.FunctionComponent<IconProps> = ({
+const Icon: React.FunctionComponent<IProps> = ({
   className,
   name,
   ...restProps

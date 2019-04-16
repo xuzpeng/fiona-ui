@@ -1,7 +1,7 @@
 .f-dialog {
-  width: 10em;
-  height: 10em;
+  width: 30em;
   background-color: #fff;
+  border-radius: 4px;
   position: absolute;
   &-mask {
     position: fixed;
@@ -13,9 +13,50 @@
     height: 100%;
     background-color: rgba(0, 0, 0, .7)
   }
+  &-header {
+    padding: 0 10px;
+    min-height: 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+  }
+  &-main {
+    min-height: 5em;
+    padding: 20px 10px;
+    border-bottom: 1px solid #ccc;
+  }
   &-center {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
   }
+  &-close {
+    opacity: 0.4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // position: absolute;
+    // left: 100%;
+    // bottom: 100%;
+    // transform: translate(-50%, 50%);
+  }
+  &-footer {
+    min-height: 3.2em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 10px;
+    &-button {
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.f-icon {
+  fill: currentColor;
 }

@@ -1,24 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './botton.scss';
 import combineClass from '../../helpers/combineClass';
 
-interface ButtonProps {
+interface IProps {
   type?: string;
   className?: string;
+  style?: Object;
+  onClick?: React.MouseEventHandler;
+  children: string;
 }
 
-export default class Button extends Component<ButtonProps> {
-  static propTypes: { 
-    type: PropTypes.Requireable<string>; 
-    className: PropTypes.Requireable<string>; 
-  };
-  static defaultProps: {};
-  render() {
-    return (
-      <button className={combineClass(`f-button f-button-${this.props.type}`, this.props.className)}>{this.props.children}</button>
-    )
-  }
+const Button: React.FunctionComponent<IProps> = (props) => {
+  return (
+    <button 
+      style={props.style} 
+      className={combineClass(`f-button f-button-${props.type}`, props.className)}
+      onClick={props.onClick}  
+    >
+      {props.children}
+    </button>
+  )
 }
 
 Button.propTypes = {
@@ -29,3 +31,5 @@ Button.propTypes = {
 Button.defaultProps = {
   type: 'default'
 }
+
+export default Button;

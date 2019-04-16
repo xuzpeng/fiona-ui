@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FButton from '../../../lib/components/button/button';
 import './button.example.scss';
 
-export default class Button extends Component {
-  render() {
-    return (
-      <div>
-        <FButton type="primary" className="fdfd">Primary</FButton>
-        <FButton type="default">Default</FButton>
-        <FButton type="dashed">dashed</FButton>
-        <FButton type="danger">Danger</FButton>
-      </div>
-    )
-  }
+export default () => {
+  return (
+    <div>
+      <FButton className="f-btn" type="primary">Primary</FButton>
+      <FButton className="f-btn" type="default">Default</FButton>
+      <FButton className="f-btn" type="dashed">dashed</FButton>
+      <FButton className="f-btn" type="danger">Danger</FButton>
+    </div>
+  )
 }
