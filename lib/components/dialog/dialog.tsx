@@ -4,6 +4,7 @@ import PRC from '../../helpers/prefixClass';
 import combineClass from '../../helpers/combineClass';
 import './dialog.scss';
 import Icon from '../icon/icon';
+import ReactDOM from 'react-dom';
 
 interface IProps {
   visible?: boolean;
@@ -22,31 +23,33 @@ const Dialog: React.FunctionComponent<IProps> = (props) => {
       props.onClose(e);
     }
   }
-  return (
-    props.visible ? <Fragment>
-      <div className={`${prefix('mask')}`} onClick={maskCloseDialog}></div>
-      <div className={combineClass(prefix(), prefix(props.position))}>
-        <header className={prefix('header')}>
-          <div className={prefix('title')}>{props.title}</div>
-          <div className={`${prefix('close')}`} onClick={props.onClose}>
-            <Icon name="close"/>
-          </div>
-        </header>
-        <main className={prefix('main')}>
-          {props.children}
-        </main>
-        <footer className={prefix('footer')}>
-          {
-            props.buttons.map((btn, index) => {
-              return React.cloneElement(btn, {
-                key: index,
-                className: prefix('footer-button')
-              })
+  const dialogComp = props.visible ? <Fragment>
+    <div className={`${prefix('mask')}`} onClick={maskCloseDialog}></div>
+    <div className={combineClass(prefix(), prefix(props.position))}>
+      <header className={prefix('header')}>
+        <div className={prefix('title')}>{props.title}</div>
+        <div className={`${prefix('close')}`} onClick={props.onClose}>
+          <Icon name="close" />
+        </div>
+      </header>
+      <main className={prefix('main')}>
+        {props.children}
+      </main>
+      <footer className={prefix('footer')}>
+        {
+          props.buttons.map((btn, index) => {
+            return React.cloneElement(btn, {
+              key: index,
+              className: prefix('footer-button')
             })
-          }
-        </footer>
-      </div>
-    </Fragment> : null
+          })
+        }
+      </footer>
+    </div>
+  </Fragment> : null
+  return ReactDOM.createPortal(
+    dialogComp,
+    document.body
   )
 }
 
