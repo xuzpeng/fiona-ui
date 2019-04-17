@@ -10,7 +10,7 @@ interface IProps {
   visible?: boolean;
   position?: string;
   title?: string;
-  buttons: ReactElement[];
+  buttons?: ReactElement[];
   onClose: React.MouseEventHandler;
   closeOnMask?: boolean;
 }
@@ -37,7 +37,7 @@ const Dialog: React.FunctionComponent<IProps> = (props) => {
       </main>
       <footer className={prefix('footer')}>
         {
-          props.buttons.map((btn, index) => {
+          props.buttons && props.buttons.map((btn, index) => {
             return React.cloneElement(btn, {
               key: index,
               className: prefix('footer-button')
@@ -51,6 +51,28 @@ const Dialog: React.FunctionComponent<IProps> = (props) => {
     dialogComp,
     document.body
   )
+}
+
+const alert = (content: string) => {
+  const alertComp = <Dialog visible={true} onClose={() => {
+    ReactDOM.render(React.cloneElement(
+      alertComp,
+      {
+        visible: false
+      }
+    ), div);
+    ReactDOM.unmountComponentAtNode(div);
+    div.remove();
+  }}>
+    {content}
+  </Dialog>;
+  const div = document.createElement('div');
+  document.body.append(div);
+  ReactDOM.render(alertComp, div);
+}
+
+export {
+  alert
 }
 
 Dialog.propTypes = {

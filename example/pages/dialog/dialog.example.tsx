@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Dialog from '../../../lib/components/dialog/dialog';
 import FButton from '../../../lib/components/button/button';
+import { alert } from '../../../lib/components/dialog/dialog';
 
 export default () => {
   const [x, setX] = useState(false);
@@ -8,12 +9,14 @@ export default () => {
   return (
     <div>
       <div style={{position: "absolute"}}>
-        <FButton onClick={() => setY(!y)}>打开dialog对话框2</FButton>
-        <FButton onClick={() => setX(!x)} style={{marginLeft: 20}}>打开dialog对话框1</FButton>
+        <FButton onClick={() => setX(!x)}>打开dialog对话框1</FButton>
+        <FButton onClick={() => setY(!y)} style={{marginLeft: 20}}>打开dialog对话框2</FButton>
+        <FButton onClick={() => alert('hello world')} style={{marginLeft: 20}}>打开dialog对话框3</FButton>
         <Dialog
           onClose={() => setX(false)}
           visible={x}
           position="center"
+          closeOnMask={false}
           buttons={
             [
               <FButton onClick={() => setX(false)}>取消</FButton>,
@@ -33,12 +36,6 @@ export default () => {
           onClose={() => setY(false)}
           visible={y}
           position="center"
-          buttons={
-            [
-              <FButton onClick={() => setY(false)}>取消</FButton>,
-              <FButton type="primary" onClick={() => setY(false)}>确认</FButton>
-            ]
-          }
         >
           <p>Some contents...</p>
           <p>Some contents...</p>
