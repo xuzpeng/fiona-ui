@@ -11,7 +11,7 @@ export default () => {
       <div style={{position: "absolute"}}>
         <FButton onClick={() => setX(!x)}>打开dialog对话框1</FButton>
         <FButton onClick={() => setY(!y)} style={{marginLeft: 20}}>打开dialog对话框2</FButton>
-        <FButton onClick={() => alert('hello world')} style={{marginLeft: 20}}>打开dialog对话框3</FButton>
+        <FButton type="primary" onClick={() => alert('hello world')} style={{marginLeft: 20}}>alert</FButton>
         <Dialog
           onClose={() => setX(false)}
           visible={x}
