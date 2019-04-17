@@ -25,7 +25,6 @@
   &-main {
     min-height: 5em;
     padding: 20px 10px;
-    border-bottom: 1px solid #ccc;
     line-height: 1.6em;
   }
   &-center {
@@ -45,6 +44,7 @@
     // transform: translate(-50%, 50%);
   }
   &-footer {
+    border-top: 1px solid #ccc;
     min-height: 3.2em;
     display: flex;
     align-items: center;

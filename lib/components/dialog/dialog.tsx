@@ -1,10 +1,11 @@
-import React, { Fragment, ReactElement } from 'react';
+import React, { Fragment, ReactElement, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import PRC from '../../helpers/prefixClass';
 import combineClass from '../../helpers/combineClass';
 import './dialog.scss';
 import Icon from '../icon/icon';
 import ReactDOM from 'react-dom';
+import Button from '../button/button';
 
 interface IProps {
   visible?: boolean;
@@ -35,16 +36,18 @@ const Dialog: React.FunctionComponent<IProps> = (props) => {
       <main className={prefix('main')}>
         {props.children}
       </main>
-      <footer className={prefix('footer')}>
-        {
-          props.buttons && props.buttons.map((btn, index) => {
-            return React.cloneElement(btn, {
-              key: index,
-              className: prefix('footer-button')
+      {
+        props.buttons && props.buttons.length ? <footer className={prefix('footer')}>
+          {
+            props.buttons.map((btn, index) => {
+              return React.cloneElement(btn, {
+                key: index,
+                className: prefix('footer-button')
+              })
             })
-          })
-        }
-      </footer>
+          }
+        </footer> : null
+      }
     </div>
   </Fragment> : null
   return ReactDOM.createPortal(
@@ -54,7 +57,7 @@ const Dialog: React.FunctionComponent<IProps> = (props) => {
 }
 
 const alert = (content: string) => {
-  const alertComp = <Dialog visible={true} onClose={() => {
+  const onCancel = () => {
     ReactDOM.render(React.cloneElement(
       alertComp,
       {
@@ -63,16 +66,83 @@ const alert = (content: string) => {
     ), div);
     ReactDOM.unmountComponentAtNode(div);
     div.remove();
-  }}>
-    {content}
-  </Dialog>;
+  }
+  const alertComp = (
+    <Dialog
+      visible={true}
+      onClose={() => onCancel()}
+      buttons={
+        [<Button type="primary" onClick={() => onCancel()}>确认</Button>]
+      }>
+      {content}
+    </Dialog>
+  )
   const div = document.createElement('div');
   document.body.append(div);
   ReactDOM.render(alertComp, div);
 }
 
+const confirm = (content: string, succCb?: () => void) => {  
+  const onCancel = () => {
+    ReactDOM.render(React.cloneElement(
+      alertComp,
+      {
+        visible: false
+      }
+    ), div);
+    ReactDOM.unmountComponentAtNode(div);
+    div.remove();
+  }
+  const alertComp = (
+    <Dialog
+      visible={true}
+      onClose={() => onCancel()}
+      buttons={
+        [
+          <Button onClick={() => onCancel()}>取消</Button>,
+          <Button type="primary" onClick={() => {
+            succCb && succCb();
+            onCancel();
+          }}>确认</Button>
+        ]
+      }>
+      {content}
+    </Dialog>
+  )
+  const div = document.createElement('div');
+  document.body.append(div);
+  ReactDOM.render(alertComp, div);
+}
+
+const modal = (content?: ReactNode | ReactElement) => { 
+  const onCancel = () => {
+    ReactDOM.render(React.cloneElement(
+      alertComp,
+      {
+        visible: false
+      }
+    ), div);
+    ReactDOM.unmountComponentAtNode(div);
+    div.remove();
+  }
+  const alertComp = (
+    <Dialog
+      visible={true}
+      onClose={() => onCancel()}
+    >
+      {content}
+    </Dialog>
+  )
+  const div = document.createElement('div');
+  document.body.append(div);
+  ReactDOM.render(alertComp, div);
+  return onCancel;
+}
+
 export {
-  alert
+  alert,
+  confirm,
+  modal
 }
 
 Dialog.propTypes = {
