@@ -56,10 +56,10 @@ const Dialog: React.FunctionComponent<IProps> = (props) => {
   )
 }
 
-const alert = (content: string) => {
+const highDialog = (content: ReactElement | ReactNode, buttons?: Array<ReactElement>) => {
   const onCancel = () => {
     ReactDOM.render(React.cloneElement(
-      alertComp,
+      hignComp,
       {
         visible: false
       }
@@ -67,76 +67,38 @@ const alert = (content: string) => {
     ReactDOM.unmountComponentAtNode(div);
     div.remove();
   }
-  const alertComp = (
+  const hignComp = (
     <Dialog
       visible={true}
       onClose={() => onCancel()}
-      buttons={
-        [<Button type="primary" onClick={() => onCancel()}>确认</Button>]
-      }>
+      buttons={buttons}>
       {content}
     </Dialog>
-  )
+  );
   const div = document.createElement('div');
   document.body.append(div);
-  ReactDOM.render(alertComp, div);
-}
-
-const confirm = (content: string, succCb?: () => void) => {  
-  const onCancel = () => {
-    ReactDOM.render(React.cloneElement(
-      alertComp,
-      {
-        visible: false
-      }
-    ), div);
-    ReactDOM.unmountComponentAtNode(div);
-    div.remove();
-  }
-  const alertComp = (
-    <Dialog
-      visible={true}
-      onClose={() => onCancel()}
-      buttons={
-        [
-          <Button onClick={() => onCancel()}>取消</Button>,
-          <Button type="primary" onClick={() => {
-            succCb && succCb();
-            onCancel();
-          }}>确认</Button>
-        ]
-      }>
-      {content}
-    </Dialog>
-  )
-  const div = document.createElement('div');
-  document.body.append(div);
-  ReactDOM.render(alertComp, div);
-}
-
-const modal = (content?: ReactNode | ReactElement) => { 
-  const onCancel = () => {
-    ReactDOM.render(React.cloneElement(
-      alertComp,
-      {
-        visible: false
-      }
-    ), div);
-    ReactDOM.unmountComponentAtNode(div);
-    div.remove();
-  }
-  const alertComp = (
-    <Dialog
-      visible={true}
-      onClose={() => onCancel()}
-    >
-      {content}
-    </Dialog>
-  )
-  const div = document.createElement('div');
-  document.body.append(div);
-  ReactDOM.render(alertComp, div);
+  ReactDOM.render(hignComp, div);
   return onCancel;
+}
+
+const alert = (content: string) => {
+  const onClose = highDialog(content, [
+    <Button type="primary" onClick={() => onClose()}>确认</Button>
+  ]);
+}
+
+const confirm = (content: string, succCb?: () => void) => {
+  const onCancel = highDialog(content, [
+    <Button onClick={() => onCancel()}>取消</Button>,
+    <Button type="primary" onClick={() => {
+      succCb && succCb();
+      onCancel();
+    }}>确认</Button>,
+  ]);
+}
+
+const modal = (content?: ReactNode | ReactElement) => {
+  return highDialog(content);
 }
 
 export {
