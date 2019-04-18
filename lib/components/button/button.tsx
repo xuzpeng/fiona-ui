@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import PropTypes from 'prop-types';
 import './botton.scss';
 import combineClass from '../../helpers/combineClass';
@@ -6,7 +6,7 @@ import combineClass from '../../helpers/combineClass';
 interface IProps {
   type?: string;
   className?: string;
-  style?: Object;
+  style?: CSSProperties;
   onClick?: React.MouseEventHandler;
   children: string;
 }
