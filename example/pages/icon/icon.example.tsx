@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../../../lib/components/icon/icon';
+import { Icon } from '../../../lib';
 import './icon.example.scss';
 
 export default () => {

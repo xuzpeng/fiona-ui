@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import FIcon from '../../../lib/components/icon/icon';
+import { Icon } from '../../../lib';
 
 export default class Home extends Component {
   render() {
     return (
       <div>
-        <FIcon name="alipay" />
+        <Icon name="alipay" />
       </div>
     )
   }
