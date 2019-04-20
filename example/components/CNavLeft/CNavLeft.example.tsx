@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { menuList } from '../../config/menuConfig';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './CNavLeft.example.scss';
 
-interface IProps {
-  className?: string;
-}
-
-export default class CNavLeft extends Component<IProps> {
+export default class CNavLeft extends Component {
   render() {
     return (
       <div className="nav-left">
@@ -27,9 +23,9 @@ export default class CNavLeft extends Component<IProps> {
           </ul>
         </div>
       } else {
-        return <Link replace key={menuItem.key} to={menuItem.key}>
+        return <NavLink className="link-class" activeClassName="active" replace key={menuItem.key} to={menuItem.key}>
           <li>{menuItem.title}</li>
-        </Link>
+        </NavLink>
       }
     })
   }

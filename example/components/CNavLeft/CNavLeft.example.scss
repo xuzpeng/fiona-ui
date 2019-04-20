@@ -1,7 +1,6 @@
 .nav-left {
   width: 280px;
   box-sizing: border-box;
-  padding-left: 40px;
   border-right: 1px solid #ccc;
   height: calc(100vh - 64px);
   h3 {
@@ -13,10 +12,14 @@
     transition: all .3s;
   }
   ul {
-    padding-left: 40px;
     font-size: 14px;
-    li {
-      padding: 10px 0;
+    .link-class {
+      padding: 15px 0 15px 80px;
+      display: block;
+    }
+    .active {
+      color: #1890ff;
+      background-color: #e6f7ff;
     }
   }
 }

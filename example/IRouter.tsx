@@ -4,6 +4,7 @@ import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Button from './pages/button/button.example';
 import Icon from './pages/icon/icon.example';
 import Dialog from './pages/dialog/dialog.example';
+import Layout from './pages/layout/layout.example';
 import App from './App';
 
 export default class IRouter extends Component {
@@ -17,6 +18,7 @@ export default class IRouter extends Component {
                 <Route path={`${match.url}/button`} component={Button} />
                 <Route path={`${match.url}/icon`} component={Icon} />
                 <Route path={`${match.url}/dialog`} component={Dialog} />
+                <Route path={`${match.url}/layout`} component={Layout} />
               </Switch>
             )} />
             <Redirect to="/components/button" />

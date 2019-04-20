@@ -4,6 +4,10 @@ export const menuList: Array<any> = [
     key: '/components/common',
     children: [
       {
+        title: 'Layout 布局',
+        key: '/components/layout'
+      },
+      {
         title: 'Button 按钮',
         key: '/components/button'
       },
