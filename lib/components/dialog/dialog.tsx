@@ -25,11 +25,11 @@ const Dialog: React.FunctionComponent<IProps> = (props) => {
     }
   }
   const dialogComp = props.visible ? <Fragment>
-    <div className={`${prefix('mask')}`} onClick={maskCloseDialog}></div>
+    <div className={prefix('mask')} onClick={maskCloseDialog}></div>
     <div className={combineClass(prefix(), prefix(props.position))}>
       <header className={prefix('header')}>
         <div className={prefix('title')}>{props.title}</div>
-        <div className={`${prefix('close')}`} onClick={props.onClose}>
+        <div className={prefix('close')} onClick={props.onClose}>
           <Icon name="close" />
         </div>
       </header>

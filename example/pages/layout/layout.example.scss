@@ -1,0 +1,113 @@
+.demo1 {
+  border: 1px solid lightgray;
+  padding: 20px 40px;
+  width: 800px;
+  :not(h1) {
+    color: #fff;
+  }
+  h1 {
+    margin-bottom: 20px;
+  }
+  .l-header, .l-footer {
+    height: 70px;
+    background-color: #7dbcea;
+  }
+  .l-content {
+    background-color: rgba(16, 142, 233, 1);
+  }
+  .l-header, .l-footer, .l-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.demo2 {
+  border: 1px solid lightgray;
+  padding: 20px 40px;
+  width: 800px;
+  margin-top: 20px;
+  :not(h1) {
+    color: #fff;
+  }
+  h1 {
+    margin-bottom: 20px;
+  }
+  .l-header, .l-footer {
+    height: 70px;
+    background-color: #7dbcea;
+  }
+  .l-content {
+    background-color: rgba(16, 142, 233, 1);
+  }
+  .l-l-layout {
+    background-color: rgba(16, 142, 233, 1);
+  }
+  .l-header, .l-footer, .l-content, .l-l-aside, .l-l-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .l-l-aside {
+    background-color: #3ba0e9;
+    width: 200px;
+  }
+}
+
+.demo3 {
+  border: 1px solid lightgray;
+  padding: 20px 40px;
+  width: 800px;
+  margin-top: 20px;
+  :not(h1) {
+    color: #fff;
+  }
+  h1 {
+    margin-bottom: 20px;
+  }
+  .l-header, .l-footer {
+    height: 70px;
+    background-color: #7dbcea;
+  }
+  .l-header, .l-footer, .l-content, .l-l-aside, .l-l-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .l-l-aside {
+    width: 200px;
+    background-color: #3ba0e9;
+  }
+  .l-l-content {
+    background-color: rgba(16, 142, 233, 1);
+  }
+}
+
+.demo4 {
+  border: 1px solid lightgray;
+  padding: 20px 40px;
+  width: 800px;
+  margin-top: 20px;
+  :not(h1) {
+    color: #fff;
+  }
+  h1 {
+    margin-bottom: 20px;
+  }
+  .l-layout {
+    background-color: rgba(16, 142, 233, 1);
+    .l-aside {
+      width: 240px;
+      background-color: #3ba0e9;
+    }
+    .l-l-header, .l-l-footer {
+      height: 80px;
+      background-color: #7dbcea;
+    }
+  }
+  .l-l-header, .l-l-footer, .l-aside, .l-l-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

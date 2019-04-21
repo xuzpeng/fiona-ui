@@ -1,0 +1,17 @@
+.f-layout {
+  display: flex;
+  flex-direction: column;
+  &-content {
+    flex: 1;
+  }
+  & & {
+    flex: 1;
+    flex-direction: row;
+  }
+  &-has-aside {
+    flex-direction: row;
+    .f-layout {
+      flex-direction: column;
+    }
+  }
+}

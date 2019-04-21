@@ -21,7 +21,7 @@ export default class IRouter extends Component {
                 <Route path={`${match.url}/layout`} component={Layout} />
               </Switch>
             )} />
-            <Redirect to="/components/button" />
+            <Redirect to="/components/layout" />
           </Switch>
         </App>
       </HashRouter>

@@ -1,9 +1,19 @@
 import React from 'react';
+import PRC from '../../helpers/prefixClass';
+import combineClass from '../../helpers/combineClass';
 
-const Aside: React.FunctionComponent = () => {
+interface IProps extends React.HTMLAttributes<HTMLElement> {}
+
+const prefix = PRC('f-layout');
+
+const Aside: React.FunctionComponent<IProps> = ({
+  className,
+  children,
+  ...restProps
+}) => {
   return (
-    <div>
-      layout
+    <div className={combineClass(prefix('aside'), className)} {...restProps}>
+      Aside
     </div>
   )
 }
