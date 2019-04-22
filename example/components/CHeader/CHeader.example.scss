@@ -5,8 +5,14 @@
   box-shadow: 0 2px 8px #f0f1f2;
   padding: 0 20px;
   box-sizing: border-box;
+  display: flex;
   &-title {
     font-size: 24px;
     line-height: 64px;
+  }
+  .logo-pic {
+    width: 60px;
+    height: 60px;
+    margin: 0 20px;
   }
 }
