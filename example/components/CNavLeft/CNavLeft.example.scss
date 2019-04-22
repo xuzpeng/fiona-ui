@@ -2,7 +2,7 @@
   width: 280px;
   box-sizing: border-box;
   border-right: 1px solid #ccc;
-  height: calc(100vh - 64px);
+  min-height: calc(100vh - 64px);
   h3 {
     padding: 20px 16px;
     color: rgba(0,0,0,0.45);
