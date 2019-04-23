@@ -3,4 +3,15 @@
   &:last-child {
     margin-right: 0;
   }
+  &-code {
+    margin-top: 40px;
+  }
+}
+
+.prism-code {
+  padding: 20px;
+}
+
+.token-line {
+  line-height: 30px;
 }
