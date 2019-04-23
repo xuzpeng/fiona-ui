@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 // import Home from './pages/home';
-import Button from './pages/button/button.example';
+import Button from './pages/button/button.demo';
 import Icon from './pages/icon/icon.example';
 import Dialog from './pages/dialog/dialog.example';
 import Layout from './pages/layout/layout.example';
