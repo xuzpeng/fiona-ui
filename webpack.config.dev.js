@@ -1,5 +1,6 @@
 const baseConfig = require('./webpack.config');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = Object.assign({}, baseConfig, {
   mode: 'development',
@@ -10,6 +11,7 @@ module.exports = Object.assign({}, baseConfig, {
     new HtmlWebpackPlugin({
       template: './index.html',
       title: 'fiona-ui'
-    })
+    }),
+    new ExtractTextPlugin('[name].css')
   ]
 });
