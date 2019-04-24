@@ -1,9 +1,11 @@
 import React from 'react';
-import Layout from '../../../lib/components/layout/layout';
-import Header from '../../../lib/components/layout/header';
-import Content from '../../../lib/components/layout/content';
-import Footer from '../../../lib/components/layout/footer';
-import Aside from '../../../lib/components/layout/aside';
+import { 
+  Layout, 
+  Header, 
+  Content, 
+  Footer, 
+  Aside 
+} from '../../../lib/components/layout/layout';
 import './layout.example.scss';
 
 export default () => {
