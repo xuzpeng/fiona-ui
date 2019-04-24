@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { 
   Layout, 
   Header, 
@@ -10,7 +10,7 @@ import './layout.example.scss';
 
 export default () => {
   return (
-    <div>
+    <Fragment>
       <div className="demo1">
         <h1>第一个例子</h1>
         <Layout style={{height: '500px'}} className="l-layout">
@@ -52,6 +52,6 @@ export default () => {
           </Layout>
         </Layout>
       </div>
-    </div>
+    </Fragment>
   )
 }

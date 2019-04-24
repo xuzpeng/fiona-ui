@@ -4,7 +4,9 @@ const {
 } = require('awesome-typescript-loader')
 
 module.exports = {
-  entry: './lib/index.tsx',
+  entry: {
+    index: './lib/index.tsx'
+  },
   output: {
     path: path.resolve(__dirname, 'dist/lib'),
     library: 'fiona',

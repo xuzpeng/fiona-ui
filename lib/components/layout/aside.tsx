@@ -13,7 +13,7 @@ const Aside: React.FunctionComponent<IProps> = ({
 }) => {
   return (
     <div className={combineClass(prefix('aside'), className)} {...restProps}>
-      Aside
+      {children}
     </div>
   )
 }

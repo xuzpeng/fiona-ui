@@ -11,6 +11,7 @@
     "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+    "doc": "cross-env NODE_ENV=production webpack --config webpack.config.doc.js",
     "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.ci.js"
   },
   "repository": {
@@ -28,6 +29,7 @@
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "@types/jest": "^24.0.11",
+    "@types/node": "^11.13.7",
     "@types/react": "^16.8.12",
     "@types/react-dom": "^16.8.3",
     "@types/react-router-dom": "^4.3.1",
