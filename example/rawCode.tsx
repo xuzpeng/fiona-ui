@@ -3,11 +3,19 @@ import Highlight, { defaultProps } from "prism-react-renderer";
 
 interface IProps {
   code: string;
+  scaleY?: number;
 }
 
 const RawCode: React.FunctionComponent<IProps> = (props) => {
   return (
-    <div style={{marginTop: 20}}>
+    <div 
+      style={{
+        marginTop: 20,  
+        transform: 'scaleY(' + props.scaleY + ')', 
+        transition: 'transform 0.2s',
+        transformOrigin: 'left top'
+      }}
+    >
       {
         <Highlight {...defaultProps} code={props.code} language="jsx">
           {({ className, style, tokens, getLineProps, getTokenProps }) => (

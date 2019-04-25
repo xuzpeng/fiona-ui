@@ -16,7 +16,7 @@ a {
 }
 
 .c-navleft {
-  width: 280px;
+  min-width: 280px;
   box-sizing: border-box;
   border-right: 1px solid #ccc;
   min-height: calc(100vh - 64px);
