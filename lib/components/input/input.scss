@@ -1,9 +1,15 @@
 .f-input {
-  width: 20em;
-  height: 2em;
+  width: 240px;
+  height: 32px;
   border-radius: 4px;
   border: 1px solid #ccc;
   outline: none;
-  padding: 15px;
+  padding: 0 15px;
   box-sizing: border-box;
+  &-small {
+    height: 24px;
+  }
+  &-large {
+    height: 40px;
+  }
 }

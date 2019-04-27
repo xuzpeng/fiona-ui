@@ -5,7 +5,7 @@ export default () => {
   const [inputVal, setInputVal] = useState();
   return (
     <div>
-      <Input 
+      <Input
         placeholder="Basic usage" 
         onChange={(e) => setInputVal(e.currentTarget.value)} 
         value={inputVal}
