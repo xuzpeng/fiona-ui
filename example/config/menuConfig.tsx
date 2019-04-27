@@ -18,6 +18,10 @@ export const menuList: Array<any> = [
       {
         title: 'Dialog 对话框',
         key: '/components/dialog'
+      },
+      {
+        title: 'Input 输入框',
+        key: '/components/input'
       }
     ]
   }
