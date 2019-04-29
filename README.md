@@ -15,7 +15,7 @@ a react ui framework
  
 该 ui 库正在开发当中，欢迎各位提 PR 和 Issues, 目前只有button, icon, dialog, layout组件, 其余组件正在开发之中.
 
-文档地址(暂定, 后续会绑定域名): http://132.232.73.170/doc
+文档地址: https://xuzpeng.github.io/fiona-ui/doc/example.html
 
 # 安装
 
