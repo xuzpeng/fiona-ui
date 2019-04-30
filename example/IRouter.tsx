@@ -5,7 +5,7 @@ import Button from './pages/button/button.demo';
 import Icon from './pages/icon/icon.demo';
 import Dialog from './pages/dialog/dialog.demo';
 import Layout from './pages/layout/layout.demo';
-import Input from './pages/input/input.example';
+import Input from './pages/input/input.demo';
 import App from './App';
 
 export default class IRouter extends Component {
