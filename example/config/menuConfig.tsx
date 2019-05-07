@@ -8,6 +8,10 @@ export const menuList: Array<any> = [
         key: '/components/layout'
       },
       {
+        title: 'Affix 固钉',
+        key: '/components/affix'
+      },
+      {
         title: 'Button 按钮',
         key: '/components/button'
       },
@@ -22,7 +26,7 @@ export const menuList: Array<any> = [
       {
         title: 'Input 输入框',
         key: '/components/input'
-      }
+      },
     ]
   }
 ]
