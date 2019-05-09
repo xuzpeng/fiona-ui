@@ -1,0 +1,11 @@
+.f-input {
+  &-item {
+    display: flex;
+    height: 3em;
+    align-items: center;
+  }
+  &-label {
+    min-width: 5em;
+    text-align: center;
+  }
+}

@@ -12,6 +12,18 @@ export const menuList: Array<any> = [
         key: '/components/affix'
       },
       {
+        title: 'Breadcrumb 面包屑',
+        key: '/components/breadcrumb'
+      },
+      {
+        title: 'Pagination 分页',
+        key: '/components/pagination'
+      },
+      {
+        title: 'Form 表单',
+        key: '/components/form'
+      },
+      {
         title: 'Button 按钮',
         key: '/components/button'
       },
