@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, FormData } from '../../../lib';
+import { Form, FormData, Button } from '../../../lib';
 
 export default () => {
   const [formData, setFormData] = useState<FormData>({
@@ -14,7 +14,15 @@ export default () => {
   return <div>
     <div>
       <h1 style={{marginBottom: 20}}>第一个例子</h1>
-      <Form onChange={(newFormData: FormData) => setFormData(newFormData)} fields={fields} formData={formData}/>
+      <Form 
+        onChange={(newFormData: FormData) => setFormData(newFormData)} 
+        fields={fields} 
+        formData={formData}
+        buttons={[
+          <Button type="primary">提交</Button>,
+          <Button>重置</Button>
+        ]}
+      />
     </div>
   </div>
 }

@@ -1,11 +1,18 @@
-.f-input {
-  &-item {
-    display: flex;
-    height: 3em;
-    align-items: center;
+.f-form {
+  width: fit-content;
+  &-input {
+    &-item {
+      display: flex;
+      height: 3em;
+      align-items: center;
+    }
+    &-label {
+      min-width: 5em;
+      text-align: center;
+    }
   }
-  &-label {
-    min-width: 5em;
-    text-align: center;
+  &-buttons {
+    display: flex;
+    justify-content: space-between;
   }
 }

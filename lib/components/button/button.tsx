@@ -16,7 +16,10 @@ const Button: React.FunctionComponent<IProps> = (props) => {
     <button 
       style={props.style} 
       className={combineClass(`f-button f-button-${props.type}`, props.className)}
-      onClick={props.onClick}  
+      onClick={(e) => {
+        e.preventDefault();
+        props.onClick && props.onClick(e);
+      }}  
     >
       {props.children}
     </button>
