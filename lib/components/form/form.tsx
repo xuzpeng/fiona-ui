@@ -8,7 +8,7 @@ export interface FormData {
 
 interface IProps {
   formData: FormData,
-  fields: Array<{ name: string, label: string, input: { type: string }, autoComplete: string }>;
+  fields: Array<{ name: string, label: string, input: { type: string }, autoComplete?: string }>;
   onChange: (newFormData: FormData) => void;
 }
 
@@ -24,7 +24,8 @@ const Form: React.FC<IProps> = (props) => {
               type={v.input.type} 
               value={props.formData[v.name]}
               onChange={(e) => props.onChange({
-                [v.name]: e.target.value
+                ...props.formData,
+                [v.name]: e.target.value,
               })}
               autoComplete={v.autoComplete}
             />
