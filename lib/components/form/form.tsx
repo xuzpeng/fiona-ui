@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Input } from '../../../lib';
 import './form.scss';
-import { ReactNodeArray } from 'prop-types';
+import prefixClass from '../../helpers/prefixClass';
+
+const prefix = prefixClass('f-form');
 
 export interface FormData {
   [K: string]: any;
@@ -11,7 +13,8 @@ interface IProps {
   formData: FormData,
   fields: Array<{ name: string, label: string, input: { type: string }, autoComplete?: string }>;
   onChange: (newFormData: FormData, event?: React.ChangeEvent) => void;
-  buttons: ReactNodeArray;
+  buttons?: ReactElement[];
+  labelWidth?: number;
 }
 
 const Form: React.FC<IProps> = (props) => {
@@ -19,8 +22,12 @@ const Form: React.FC<IProps> = (props) => {
     <form className="f-form">
       {
         props.fields.map(v => (
-          <div key={v.name} className="f-form-input-item">
-            <label className='f-form-input-label' htmlFor={v.name}>{v.label}</label>
+          <div key={v.name} className={`${prefix('input-item')}`}>
+            <label 
+              className={`${prefix('input-label')}`} 
+              htmlFor={v.name}
+              style={{width: props.labelWidth}}
+            >{v.label}</label>
             <Input
               id={v.name}
               type={v.input.type}
@@ -34,7 +41,18 @@ const Form: React.FC<IProps> = (props) => {
           </div>
         ))
       }
-      <div className="f-form-buttons">{props.buttons.map((button, index) => <span key={index}>{button}</span>)}</div>
+      {/* 按钮部分 */}
+      {
+        props.buttons && props.buttons.length ? <div className={`${prefix('buttons')}`}>
+          {
+            props.buttons.map((btn, index) => {
+              return React.cloneElement(btn, {
+                key: index
+              })
+            })
+          }
+        </div> : null
+      }
     </form>
   )
 }

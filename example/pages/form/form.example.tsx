@@ -11,6 +11,19 @@ export default () => {
     { name: 'password', label: '密码', input: { type: 'password' }, autoComplete: 'new-password' },
   ]);
 
+  // 提交
+  // const onSubmit = (e: React.MouseEvent) => {
+  //   console.log(formData);
+  // }
+
+  // // 重置
+  // const onReset = (e: React.MouseEvent) => {
+  //   const newFormData = Object.keys(formData).map((k: string) => ({
+  //     [k]: ''
+  //   }));
+  //   setFormData(newFormData);
+  // }
+
   return <div>
     <div>
       <h1 style={{marginBottom: 20}}>第一个例子</h1>
