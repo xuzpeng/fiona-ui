@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, FormData, Button } from '../../../lib';
+import { ValidateFields } from '../../../lib/components/form/validate';
 
 export default () => {
   const [formData, setFormData] = useState<FormData>({
@@ -11,28 +12,20 @@ export default () => {
     { name: 'password', label: '密码', input: { type: 'password' }, autoComplete: 'new-password' },
   ]);
 
-  // 提交
-  // const onSubmit = (e: React.MouseEvent) => {
-  //   console.log(formData);
-  // }
-
-  // // 重置
-  // const onReset = (e: React.MouseEvent) => {
-  //   const newFormData = Object.keys(formData).map((k: string) => ({
-  //     [k]: ''
-  //   }));
-  //   setFormData(newFormData);
-  // }
+  const rules = [
+    { name: 'username', minLen: 2, maxLen: 4 },
+    { name: 'password', minLen: 4, maxLen: 8 }
+  ];
 
   return <div>
     <div>
       <h1 style={{marginBottom: 20}}>第一个例子</h1>
       <Form 
-        onChange={(newFormData: FormData) => setFormData(newFormData)} 
+        onChange={(newFormData: FormData, event?: React.ChangeEvent) => setFormData(newFormData)} 
         fields={fields} 
         formData={formData}
         buttons={[
-          <Button type="primary">提交</Button>,
+          <Button type="primary" onClick={() => ValidateFields(formData, rules)}>提交</Button>,
           <Button>重置</Button>
         ]}
       />
