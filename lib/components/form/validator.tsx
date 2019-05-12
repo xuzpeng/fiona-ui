@@ -10,7 +10,7 @@ type Rules = Array<{
   pattern?: RegExp
 }>;
 
-interface Errors {
+export interface Errors {
   [K: string]: string[]
 }
 

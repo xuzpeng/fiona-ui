@@ -14,5 +14,10 @@
   &-buttons {
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
+  }
+  &-error-txt {
+    font-size: 0.8em;
+    color: red;
   }
 }

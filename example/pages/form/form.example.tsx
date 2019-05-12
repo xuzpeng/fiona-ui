@@ -11,6 +11,7 @@ export default () => {
     { name: 'username', label: '用户名', input: { type: 'text' }, autoComplete: 'new-password' },
     { name: 'password', label: '密码', input: { type: 'password' }, autoComplete: 'new-password' },
   ]);
+  const [errors, setErrors] = useState({});
 
   const onSubmit = () => {
     const rules = [
@@ -20,11 +21,14 @@ export default () => {
       { name: 'password', pattern: /\d+/, message: '不符合正则条件' },
     ];
     const errors = ValidateFields(formData, rules);
-    console.log(errors);
+    setErrors(errors);
   };
 
   const onReset = () => {
-    const resetFormData = Object.keys(formData).map(d => ({[d]: ''}));
+    const resetFormData: FormData = {};
+    const errors = {};
+    Object.keys(formData).forEach((k: string) => resetFormData[k] = '');
+    setErrors(errors);
     setFormData(resetFormData);
   };
 
@@ -32,9 +36,10 @@ export default () => {
     <div>
       <h1 style={{marginBottom: 20}}>第一个例子</h1>
       <Form 
-        onChange={(newFormData: FormData, event?: React.ChangeEvent) => setFormData(newFormData)} 
+        onChange={(newFormData: FormData) => setFormData(newFormData)}
         fields={fields} 
         formData={formData}
+        errors={errors}
         buttons={[
           <Button type="primary" onClick={onSubmit}>提交</Button>,
           <Button onClick={onReset}>重置</Button>
