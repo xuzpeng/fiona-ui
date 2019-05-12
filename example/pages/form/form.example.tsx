@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form, FormData, Button } from '../../../lib';
-import { ValidateFields } from '../../../lib/components/form/validate';
+import { ValidateFields } from '../../../lib/components/form/validator';
 
 export default () => {
   const [formData, setFormData] = useState<FormData>({
@@ -12,10 +12,21 @@ export default () => {
     { name: 'password', label: '密码', input: { type: 'password' }, autoComplete: 'new-password' },
   ]);
 
-  const rules = [
-    { name: 'username', minLen: 2, maxLen: 4 },
-    { name: 'password', minLen: 4, maxLen: 8 }
-  ];
+  const onSubmit = () => {
+    const rules = [
+      { name: 'username', isRequired: true, message: '必填项' },
+      { name: 'username', minLen: 2, maxLen: 4, message: '未在2-4之间' },
+      { name: 'password', minLen: 1, maxLen: 4, message: '未在1-4之间' },
+      { name: 'password', pattern: /\d+/, message: '不符合正则条件' },
+    ];
+    const errors = ValidateFields(formData, rules);
+    console.log(errors);
+  };
+
+  const onReset = () => {
+    const resetFormData = Object.keys(formData).map(d => ({[d]: ''}));
+    setFormData(resetFormData);
+  };
 
   return <div>
     <div>
@@ -25,8 +36,8 @@ export default () => {
         fields={fields} 
         formData={formData}
         buttons={[
-          <Button type="primary" onClick={() => ValidateFields(formData, rules)}>提交</Button>,
-          <Button>重置</Button>
+          <Button type="primary" onClick={onSubmit}>提交</Button>,
+          <Button onClick={onReset}>重置</Button>
         ]}
       />
     </div>

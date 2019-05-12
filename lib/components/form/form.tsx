@@ -19,12 +19,12 @@ interface IProps {
 
 const Form: React.FC<IProps> = (props) => {
   return (
-    <form className="f-form">
+    <form className={prefix()}>
       {
         props.fields.map(v => (
-          <div key={v.name} className={`${prefix('input-item')}`}>
+          <div key={v.name} className={prefix('input-item')}>
             <label 
-              className={`${prefix('input-label')}`} 
+              className={prefix('input-label')} 
               htmlFor={v.name}
               style={{width: props.labelWidth}}
             >{v.label}</label>
