@@ -1,0 +1,9 @@
+.f-bci {
+  display: flex;
+  &-item {
+    display: flex;
+  }
+  &-separator {
+    padding: 0 0.8em;
+  }
+}
