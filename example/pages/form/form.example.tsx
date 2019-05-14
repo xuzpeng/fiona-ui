@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, FormData, Button } from '../../../lib';
 import { ValidateFields } from '../../../lib/components/form/validator';
+import './form.example.scss';
 
 export default () => {
   const [formData, setFormData] = useState<FormData>({
@@ -8,8 +9,8 @@ export default () => {
     password: ''
   });
   const [fields] = useState([
-    { name: 'username', label: '用户名', input: { type: 'text' }, autoComplete: 'new-password' },
-    { name: 'password', label: '密码', input: { type: 'password' }, autoComplete: 'new-password' },
+    { name: 'username', label: '用户名', input: { type: 'text' } },
+    { name: 'password', label: '密码', input: { type: 'password' } },
   ]);
   const [errors, setErrors] = useState({});
 
@@ -33,11 +34,25 @@ export default () => {
   };
 
   return <div>
-    <div>
-      <h1 style={{marginBottom: 20}}>第一个例子</h1>
-      <Form 
+    <div className="f-form-demo">
+      <h1 style={{marginBottom: 10}}>第一个例子</h1>
+      <Form
+        layout='vertical'
         onChange={(newFormData: FormData) => setFormData(newFormData)}
         fields={fields} 
+        formData={formData}
+        errors={errors}
+        buttons={[
+          <Button type="primary" onClick={onSubmit}>提交</Button>,
+          <Button onClick={onReset}>重置</Button>
+        ]}
+      />
+    </div>
+    <div className="f-form-demo">
+      <h1 style={{marginBottom: 10}}>第二个例子</h1>
+      <Form
+        onChange={(newFormData: FormData) => setFormData(newFormData)}
+        fields={fields}
         formData={formData}
         errors={errors}
         buttons={[

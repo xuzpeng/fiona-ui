@@ -1,8 +1,10 @@
-import React, {ReactElement} from 'react';
-import {Input} from '../../../lib';
+import React, { ReactElement } from 'react';
+import { Input } from '../../../lib';
 import './form.scss';
 import prefixClass from '../../helpers/prefixClass';
-import {Errors} from './validator';
+import { Errors } from './validator';
+import combineClass from "../../helpers/combineClass";
+import PropTypes from 'prop-types';
 
 const prefix = prefixClass('f-form');
 
@@ -12,11 +14,12 @@ export interface FormData {
 
 interface IProps {
   formData: FormData,
-  fields: Array<{ name: string, label: string, input: { type: string }, autoComplete?: string }>;
+  fields: Array<{ name: string, label: string, input: { type: string }, autoComplete?: boolean }>;
   onChange: (newFormData: FormData, event?: React.ChangeEvent) => void;
   buttons?: ReactElement[];
   labelWidth?: number;
   errors?: Errors;
+  layout?: string;
 }
 
 const Form: React.FC<IProps> = (props) => {
@@ -25,11 +28,11 @@ const Form: React.FC<IProps> = (props) => {
       {
         props.fields.map(v => (
           <div key={v.name}>
-            <div className={prefix('input-item')}>
+            <div className={combineClass(prefix('input-item'), prefix(`input-item-${props.layout}`))}>
               <label
                 className={prefix('input-label')}
                 htmlFor={v.name}
-                style={{width: props.labelWidth}}
+                style={{ width: props.labelWidth }}
               >{v.label}</label>
               <Input
                 id={v.name}
@@ -39,10 +42,14 @@ const Form: React.FC<IProps> = (props) => {
                   ...props.formData,
                   [v.name]: e.target.value,
                 })}
-                autoComplete={v.autoComplete}
+                autoComplete={v.autoComplete ? '' : 'new-password'}
               />
             </div>
-            <div className={prefix('error-txt')}>{props.errors && props.errors[v.name] && props.errors[v.name].join(' ')}</div>
+            {
+              props.errors && props.errors[v.name] && props.errors[v.name].length ? 
+                <div className={prefix('error-txt')}>{props.errors[v.name].join(' ')}</div> : 
+                null
+            }
           </div>
         ))
       }
@@ -60,6 +67,14 @@ const Form: React.FC<IProps> = (props) => {
       }
     </form>
   )
+}
+
+Form.propTypes = {
+  layout: PropTypes.string
+}
+
+Form.defaultProps = {
+  layout: 'horizontal'
 }
 
 export default Form;
