@@ -4,7 +4,7 @@ import './button.example.scss';
 
 export default () => {
   return (
-    <div>
+    <div className='f-btn-demo'>
       <Button className="f-btn" type="primary">Primary</Button>
       <Button className="f-btn" type="default">Default</Button>
       <Button className="f-btn" type="dashed">dashed</Button>

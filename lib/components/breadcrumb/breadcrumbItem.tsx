@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 
 interface IProps {
   separator: string;
+  children: ReactNode;
 }
 
 const BreadcrumbItem: React.FC<IProps> = (props) => {
@@ -10,7 +11,7 @@ const BreadcrumbItem: React.FC<IProps> = (props) => {
       {
         props.separator && <div className='f-bci-separator'>{props.separator}</div>
       }
-      <div>{props.children}</div>
+      <div className='f-bci-item-child'>{props.children}</div>
     </div>
   )
 };

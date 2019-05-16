@@ -21,3 +21,11 @@ a {
   border-right: 1px solid #ccc;
   min-height: calc(100vh - 64px);
 }
+
+.prism-code {
+  padding: 20px;
+}
+
+.token-line {
+  line-height: 30px;
+}

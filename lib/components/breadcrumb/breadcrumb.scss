@@ -2,6 +2,11 @@
   display: flex;
   &-item {
     display: flex;
+    align-items: center;
+    &-child {
+      display: flex;
+      align-items: center;
+    }
   }
   &-separator {
     padding: 0 0.8em;

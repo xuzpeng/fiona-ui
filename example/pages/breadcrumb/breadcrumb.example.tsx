@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumb } from '../../../lib';
+import {Breadcrumb, Icon} from '../../../lib';
 import './breadcrumb.example.scss';
 
 export default () => {
@@ -18,6 +18,19 @@ export default () => {
             <a href="">Application List</a>
           </Breadcrumb.Item>
           <Breadcrumb.Item>An Application</Breadcrumb.Item>
+        </Breadcrumb>
+      </div>
+      <div className='f-breadcrumb-demo'>
+        <h1>第二个例子</h1>
+        <Breadcrumb>
+          <Breadcrumb.Item>
+            <Icon name="home" />
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>
+            <Icon name="user" />
+            <span>Application List</span>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>Application</Breadcrumb.Item>
         </Breadcrumb>
       </div>
     </div>
