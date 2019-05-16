@@ -1,0 +1,17 @@
+.f-bci {
+  display: flex;
+  &-item {
+    display: flex;
+    align-items: center;
+    &-child {
+      display: flex;
+      align-items: center;
+      > * {
+        padding: 0 0.2em;
+      }
+    }
+  }
+  &-separator {
+    padding: 0 0.8em;
+  }
+}

@@ -49,7 +49,6 @@ export default () => {
         <Dialog
           onClose={() => setX(false)}
           visible={x}
-          position="center"
           closeOnMask={false}
           buttons={
             [
@@ -69,7 +68,6 @@ export default () => {
         <Dialog
           onClose={() => setY(false)}
           visible={y}
-          position="center"
         >
           <p>Some contents...</p>
           <p>Some contents...</p>

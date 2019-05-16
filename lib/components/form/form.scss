@@ -1,0 +1,37 @@
+.f-form {
+  width: fit-content;
+  padding: 1.2em 0;
+  &-input {
+    &-item {
+      display: flex;
+      align-items: center;
+      &-horizontal {
+        padding: 0.6em 0;
+      }
+      &-vertical {
+        display: block;
+        > * {
+          display: block;
+        }
+        > label {
+          padding: 0.6em 0;
+          text-align: left;
+        }
+      }
+    }
+    &-label {
+      min-width: 5em;
+      text-align: center;
+    }
+  }
+  &-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6em 0;
+  }
+  &-error-txt {
+    font-size: 0.8em;
+    color: red;
+    padding: 0.6em 0;
+  }
+}

@@ -28,8 +28,8 @@ export default () => {
           value={inputVal}
         />
         <Input
-          placeholder="Basic usage"
           size="large"
+          placeholder="Basic usage"
           onChange={(e) => setInputVal(e.currentTarget.value)}
           value={inputVal}
         />

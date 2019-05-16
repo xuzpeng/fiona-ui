@@ -18,6 +18,7 @@ const Input: React.FunctionComponent<IProps> = ({
   value,
   onChange,
   size,
+  autoComplete,
   ...restProps
 }) => {
   const [inputVal, setInputVal] = useState(value);
@@ -28,6 +29,7 @@ const Input: React.FunctionComponent<IProps> = ({
     <input
       className={combineClass(prefix(), className, prefix(size))}
       value={onChange ? isEmpty(value) : inputVal}
+      autoComplete={autoComplete}
       onChange={(e) => {
         onChange ?
           onChange(e) :
@@ -36,6 +38,6 @@ const Input: React.FunctionComponent<IProps> = ({
       {...restProps}
     />
   )
-}
+};
 
 export default Input;

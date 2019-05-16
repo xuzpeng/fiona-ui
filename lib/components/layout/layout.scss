@@ -4,14 +4,13 @@
   &-content {
     flex: 1;
   }
-  & & {
+  & > & {
     flex: 1;
     flex-direction: row;
   }
   &-has-aside {
-    // 待修复
-    flex-direction: row!important;
-    .f-layout {
+    flex-direction: row;
+    > .f-layout {
       flex-direction: column;
     }
   }
