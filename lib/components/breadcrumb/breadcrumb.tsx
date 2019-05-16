@@ -1,5 +1,5 @@
 import React, {ReactElement} from 'react';
-import BreadcrumbItem from './breadcrumbItem';
+import BreadcrumbItem, {BreadcrumbItemProps} from './breadcrumbItem';
 import './breadcrumb.scss';
 
 interface IProps {
@@ -9,7 +9,7 @@ interface IProps {
 
 interface BreadcrumbType<T> {
   (props: T): ReactElement;
-  Item: React.FC;
+  Item: React.FC<BreadcrumbItemProps>;
 }
 
 const Breadcrumb: BreadcrumbType<IProps> = (props) => {

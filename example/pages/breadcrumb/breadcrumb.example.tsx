@@ -26,7 +26,7 @@ export default () => {
           <Breadcrumb.Item>
             <Icon name="home" />
           </Breadcrumb.Item>
-          <Breadcrumb.Item>
+          <Breadcrumb.Item href="">
             <Icon name="user" />
             <span>Application List</span>
           </Breadcrumb.Item>
