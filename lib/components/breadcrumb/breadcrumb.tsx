@@ -13,6 +13,7 @@ interface BreadcrumbType<T> {
 }
 
 const Breadcrumb: BreadcrumbType<IProps> = (props) => {
+  const lastIdx = props.children.length - 1;
   return (
     <div>
       <div className='f-bci'>
@@ -20,7 +21,7 @@ const Breadcrumb: BreadcrumbType<IProps> = (props) => {
           props.children.map((v: ReactElement, index: number) => {
             return React.cloneElement(v, {
               key: index,
-              separator: index === 0 ? null : (props.separator || '/')
+              separator: index === lastIdx ? null : (props.separator || '/')
             })
           })
         }

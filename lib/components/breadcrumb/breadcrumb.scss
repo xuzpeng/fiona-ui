@@ -1,13 +1,23 @@
+$black1: rgba(0, 0, 0, 1);
+$black045: rgba(0, 0, 0, 0.45);
 .f-bci {
   display: flex;
   &-item {
     display: flex;
     align-items: center;
+    color: $black045;
     &-child {
       display: flex;
       align-items: center;
-      > * {
+      >* {
+        color: $black045;
         padding: 0 0.2em;
+      }
+      &:last-child {
+        color: $black1;
+        >* {
+          color: $black1;
+        }
       }
     }
   }

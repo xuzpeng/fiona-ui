@@ -31,6 +31,23 @@ export default () => {
             <span>Application List</span>
           </Breadcrumb.Item>
           <Breadcrumb.Item>Application</Breadcrumb.Item>
+          <Breadcrumb.Item href="">
+            <Icon name="user" />
+            <span>Application List</span>
+          </Breadcrumb.Item>
+        </Breadcrumb>
+      </div>
+      <div className='f-breadcrumb-demo'>
+        <h1>第三个例子</h1>
+        <Breadcrumb separator=">">
+          <Breadcrumb.Item>
+            <Icon name="home" />
+          </Breadcrumb.Item>
+          <Breadcrumb.Item href="">
+            <Icon name="user" />
+            <span>Application List</span>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>Application</Breadcrumb.Item>
         </Breadcrumb>
       </div>
     </div>
