@@ -8,6 +8,7 @@
   opacity: 1;
   background-color: #fff;
   cursor: pointer;
+  display: inline-block;
   &:active {
     opacity: 0.7;
   }
@@ -44,5 +45,11 @@
   &-link {
     border: none;
     color: #1890ff;
+  }
+  &-text {
+    margin-left: 0.4em;
+  }
+  > .f-icon {
+    vertical-align: -0.28em;
   }
 }
