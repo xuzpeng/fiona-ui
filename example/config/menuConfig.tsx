@@ -39,6 +39,10 @@ export const menuList: Array<any> = [
         title: 'Input 输入框',
         key: '/components/input'
       },
+      {
+        title: 'Loading 加载',
+        key: '/components/loading'
+      },
     ]
   }
 ]

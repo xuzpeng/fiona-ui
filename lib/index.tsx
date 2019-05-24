@@ -8,3 +8,4 @@ export { default as Affix } from './components/affix/affix';
 export { default as Breadcrumb } from './components/breadcrumb/breadcrumb';
 export { default as Pagination } from './components/pagination/pagination';
 export { default as Form, FormData } from './components/form/form';
+export { default as Loading } from './components/loading/loading';
