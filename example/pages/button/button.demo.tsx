@@ -12,7 +12,6 @@ export default () => {
       style={{marginTop: 20}}
     >代码展示</Button>
     {
-      //@ts-ignore
       <RawCode scaleY={y} code={require('!!raw-loader!./button.example.tsx').default}></RawCode>
     }
   </Fragment>

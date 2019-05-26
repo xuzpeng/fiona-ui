@@ -12,7 +12,6 @@ export default () => {
       onClick={() => setY(y === 0 ? 1 : 0)} 
     >代码展示</Button>
     {
-      //@ts-ignore
       <RawCode scaleY={y} code={require('!!raw-loader!./dialog.example').default}></RawCode>
     }
   </Fragment>
