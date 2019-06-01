@@ -7,14 +7,7 @@ export default () => {
   return (
     <div className="f-demo-affix">
       <div>
-        <h1>第一个例子</h1>
-        <Affix offsetTop={top}>
-          <Button
-            type="primary"
-          >
-            Affix top
-          </Button>
-        </Affix>
+        敬请期待
       </div>
     </div>
   )
