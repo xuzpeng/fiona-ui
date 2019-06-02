@@ -4,6 +4,7 @@ import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 import 'codemirror/theme/mbo.css';
 require('codemirror/mode/xml/xml');
+import './CodeEditor.scss';
 
 interface IProps {
   value: string;
