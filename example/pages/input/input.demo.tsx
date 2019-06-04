@@ -17,7 +17,7 @@ const editorStyle = {
 };
 
 export default () => {
-  const [y, setY] = useState(0);
+  const [y, setY] = useState(1);
   const [rawCode, setRawCode] = useState(require('!!raw-loader!./input.example.tsx').default);
   return <Fragment>
     <InputExample />
