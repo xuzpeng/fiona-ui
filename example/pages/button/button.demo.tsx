@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import ButtonExample from './button.example';
 import CodeEditor from '../../CodeEditor';
 
-const buttonStyle = {
+const editorStyle = {
   marginTop: 20, 
   width: 40, 
   height: 40,
@@ -27,7 +27,7 @@ export default () => {
     >代码展示</Button> */}
     <span 
       onClick={() => setY(y === 0 ? 1 : 0)}
-      style={buttonStyle}
+      style={editorStyle}
     >&lt;&nbsp;&gt;</span>
     <CodeEditor scaleY={y} value={rawCode} setRawCode={setRawCode}/>
   </Fragment>

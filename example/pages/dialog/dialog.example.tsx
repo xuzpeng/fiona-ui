@@ -22,7 +22,7 @@ export default () => {
   }
   return (
     <div>
-      <div style={{ position: "absolute" }}>
+      <div>
         <Button onClick={() => setX(!x)}>打开dialog对话框1</Button>
         <Button 
           onClick={() => setY(!y)} 

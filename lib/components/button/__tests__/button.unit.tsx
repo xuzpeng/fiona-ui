@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../button';
 import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 
 describe('Button Component', () => {
   it('renders button component', () => {
@@ -12,5 +13,9 @@ describe('Button Component', () => {
     const component = renderer.create(<Button onClick={() => {}}>Primary</Button>);
     const json = component.toJSON();
     json && json.props.onClick();
+  });
+  it('button component text', () => {
+    const button = shallow(<Button>Primary</Button>);
+    expect(button.text()).toEqual('Primary');
   });
 });
