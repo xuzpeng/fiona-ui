@@ -19,7 +19,7 @@ const Button: React.FunctionComponent<IProps> = (props) => {
       style={props.style} 
       className={combineClass(`f-button f-button-${props.type}`, props.className)}
       onClick={(e) => {
-        e.preventDefault();
+        e && e.preventDefault();
         props.onClick && props.onClick(e);
       }}  
     >
