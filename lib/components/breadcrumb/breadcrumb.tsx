@@ -1,5 +1,5 @@
-import React, {ReactElement} from 'react';
-import BreadcrumbItem, {BreadcrumbItemProps} from './breadcrumbItem';
+import React, { ReactElement } from 'react';
+import BreadcrumbItem, { BreadcrumbItemProps } from './breadcrumbItem';
 import './breadcrumb.scss';
 
 interface IProps {
@@ -7,12 +7,12 @@ interface IProps {
   separator?: string;
 }
 
-interface BreadcrumbType<T> {
-  (props: T): ReactElement;
-  Item: React.FC<BreadcrumbItemProps>;
+interface IIProps extends React.FC<IProps> {
+  Item: React.FC<BreadcrumbItemProps>
 }
 
-const Breadcrumb: BreadcrumbType<IProps> = (props) => {
+const Breadcrumb: IIProps = (props) => {
+  const lastIdx = props.children.length - 1;
   return (
     <div>
       <div className='f-bci'>
@@ -20,14 +20,14 @@ const Breadcrumb: BreadcrumbType<IProps> = (props) => {
           props.children.map((v: ReactElement, index: number) => {
             return React.cloneElement(v, {
               key: index,
-              separator: index === 0 ? null : (props.separator || '/')
+              separator: index === lastIdx ? null : (props.separator || '/')
             })
           })
         }
       </div>
     </div>
   )
-};
+}
 
 Breadcrumb.Item = BreadcrumbItem;
 

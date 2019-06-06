@@ -6,10 +6,10 @@ import Icon from './pages/icon/icon.demo';
 import Dialog from './pages/dialog/dialog.demo';
 import Layout from './pages/layout/layout.demo';
 import Input from './pages/input/input.demo';
-import Affix from './pages/affix/affix.example';
 import Breadcrumb from './pages/breadcrumb/breadcrumb.example';
 import Pagination from './pages/pagination/pagination.example';
 import Form from './pages/form/form.example';
+import Loading from './pages/loading/loading.example';
 import App from './App';
 
 export default class IRouter extends Component {
@@ -25,10 +25,10 @@ export default class IRouter extends Component {
                 <Route path={`${match.url}/dialog`} component={Dialog} />
                 <Route path={`${match.url}/layout`} component={Layout} />
                 <Route path={`${match.url}/input`} component={Input} />
-                <Route path={`${match.url}/affix`} component={Affix} />
                 <Route path={`${match.url}/breadcrumb`} component={Breadcrumb} />
                 <Route path={`${match.url}/pagination`} component={Pagination} />
                 <Route path={`${match.url}/form`} component={Form} />
+                <Route path={`${match.url}/loading`} component={Loading} />
               </Switch>
             )} />
             <Redirect to="/components/layout" />

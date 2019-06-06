@@ -1,0 +1,77 @@
+.f-loading {
+  display: inline-block;
+  background-color: transparent;
+  border: 0.1em solid #1890ff;
+  border-top: none;
+  border-right: none;
+  border-radius: 50%;
+  transform-origin: center center;
+  animation: loading 1s linear infinite;
+
+  &-spin {
+    border: none;
+    border-radius: 0;
+    position: relative;
+
+    >i {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background-color: #1890ff;
+      border-radius: 50%;
+      opacity: 1;
+      position: absolute;
+
+      &:nth-child(1) {
+        top: 0;
+        left: 0;
+      }
+
+      &:nth-child(2) {
+        top: 0;
+        right: 0;
+      }
+
+      &:nth-child(3) {
+        bottom: 0;
+        left: 0;
+      }
+
+      &:nth-child(4) {
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+
+  &-small {
+    width: 1em;
+    height: 1em;
+  }
+  &-medium {
+    width: 1.2em;
+    height: 1.2em;
+  }
+  &-large {
+    width: 1.4em;
+    height: 1.4em;
+  }
+  &-text {
+    color: #1890ff;
+    padding: 0.5em 0;
+  }
+  &-container {
+    display: inline-block;
+    text-align: center;
+  }
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
