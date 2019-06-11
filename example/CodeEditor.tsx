@@ -6,7 +6,7 @@ import 'codemirror/theme/mbo.css';
 require('codemirror/mode/jsx/jsx');
 import './CodeEditor.scss';
 import 'codemirror/keymap/sublime';
-import 'codemirror/theme/monokai.css';
+import 'codemirror/theme/dracula.css';
 
 interface IProps {
   value: string;
@@ -32,7 +32,7 @@ const CodeEditor = (props: IProps) => {
         value={props.value}
         options={{
           mode: 'jsx',
-          theme: 'monokai',
+          theme: 'dracula',
           keyMap: 'sublime',
           lineNumbers: true
         }}

@@ -29,3 +29,29 @@ a {
 .token-line {
   line-height: 30px;
 }
+
+.md {
+  padding-top: 40px;
+  h1 {
+    color: #0d1a26;
+    font-weight: 500;
+    font-size: 24px;
+    padding-bottom: 20px;
+  }
+  table {
+    width: 100%;
+  }
+  th {
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0.04);
+    color: #5c6b77;
+  }
+  th, td {
+    border-bottom: 1px solid #dfe2e5;
+    padding: 6px 13px;
+    text-align: center;
+  }
+  tr {
+    line-height: 3em;
+  }
+}
