@@ -10,6 +10,7 @@ import Breadcrumb from './pages/breadcrumb/breadcrumb.example';
 import Pagination from './pages/pagination/pagination.example';
 import Form from './pages/form/form.example';
 import Loading from './pages/loading/loading.example';
+import Affix from './pages/affix/affix.example';
 import App from './App';
 
 export default class IRouter extends Component {
@@ -29,6 +30,7 @@ export default class IRouter extends Component {
                 <Route path={`${match.url}/pagination`} component={Pagination} />
                 <Route path={`${match.url}/form`} component={Form} />
                 <Route path={`${match.url}/loading`} component={Loading} />
+                <Route path={`${match.url}/affix`} component={Affix} />
               </Switch>
             )} />
             <Redirect to="/components/layout" />

@@ -1,0 +1,12 @@
+.f-affix {
+  &-demo {
+    height: 1700px;
+    > div {
+      border: 1px solid #ccc;
+      padding: 20px;
+      h1 {
+        padding-bottom: 20px;
+      }
+    }
+  }
+}
