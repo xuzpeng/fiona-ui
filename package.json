@@ -1,6 +1,6 @@
 {
   "name": "fiona-ui",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "a react ui framework",
   "main": "dist/lib/index",
   "types": "dist/lib/index",
@@ -28,14 +28,20 @@
   "devDependencies": {
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
+    "@types/codemirror": "^0.0.74",
+    "@types/enzyme": "^3.9.3",
+    "@types/highlight.js": "^9.12.3",
     "@types/jest": "^24.0.11",
-    "@types/node": "^11.13.7",
+    "@types/marked": "^0.6.5",
+    "@types/node": "^12.0.4",
     "@types/react": "^16.8.12",
     "@types/react-dom": "^16.8.3",
     "@types/react-router-dom": "^4.3.1",
+    "@types/react-test-renderer": "^16.8.1",
     "awesome-typescript-loader": "^5.2.1",
     "babel-jest": "^24.7.1",
     "babel-preset-react-app": "^7.0.2",
+    "codemirror": "^5.47.0",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
     "enzyme": "^3.9.0",
@@ -49,6 +55,8 @@
     "prism-react-renderer": "^0.1.6",
     "prop-types": "^15.7.2",
     "raw-loader": "^2.0.0",
+    "react-codemirror2": "^6.0.0",
+    "react-markdown": "^4.0.8",
     "react-test-renderer": "^16.8.6",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
@@ -62,6 +70,7 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.0"
+    "react-router-dom": "^5.0.0",
+    "tslint": "^5.17.0"
   }
 }

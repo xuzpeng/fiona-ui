@@ -1,21 +1,14 @@
-import React, {useState} from 'react';
-import {Affix, Button} from '../../../lib';
+import React from 'react';
+import { Affix, Button } from '../../../lib';
 import './affix.example.scss';
 
 export default () => {
-  const [top] = useState(10)
-  return (
-    <div className="f-demo-affix">
-      <div>
-        <h1>第一个例子</h1>
-        <Affix offsetTop={top}>
-          <Button
-            type="primary"
-          >
-            Affix top
-          </Button>
-        </Affix>
-      </div>
+  return <div className="f-affix-demo">
+    <div className="f-affix-demo-1">
+      <h1>基础用法</h1>
+      <Affix offsetTop={20}>
+        <Button type="primary">Affix</Button>
+      </Affix>
     </div>
-  )
+  </div>
 }
