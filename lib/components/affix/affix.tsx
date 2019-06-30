@@ -10,7 +10,6 @@ const Affix: React.FC<IProps> = (props) => {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const scrollWindow = () => {
-      if (!ref.current) return;
     };
     window.addEventListener('scroll', scrollWindow);
     return () => {
