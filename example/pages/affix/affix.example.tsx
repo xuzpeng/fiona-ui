@@ -6,7 +6,7 @@ export default () => {
   return <div className="f-affix-demo">
     <div className="f-affix-demo-1">
       <h1>基础用法</h1>
-      <Affix offsetTop={20}>
+      <Affix offsetTop={120}>
         <Button type="primary">Affix</Button>
       </Affix>
     </div>
