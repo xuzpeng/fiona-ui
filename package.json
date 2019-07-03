@@ -44,6 +44,7 @@
     "codemirror": "^5.47.0",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
+    "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
@@ -72,5 +73,10 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "tslint": "^5.17.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
