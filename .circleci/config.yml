@@ -76,5 +76,4 @@ workflows:
 #               ignore: /.*/
             filters:
               branches:
-                only:
-                  - deploy
+                only: deploy
