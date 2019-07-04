@@ -51,7 +51,7 @@ jobs:
           at: .
       - run: npm config set //registry.npmjs.org/:_authToken $FIONA_TOKEN
       - run: npm publish
-      
+
 
 
 
@@ -69,11 +69,12 @@ workflows:
       - publish:
           requires:
             - build
-#           filters:
-#             tags:
-#               only: /^v[0-9]+(\.[0-9]+)*/
-#             branches:
-#               ignore: /.*/
+#            filters:
+#              tags:
+#                only: /^v[0-9]+(\.[0-9]+)*/
+#              branches:
+#                ignore: /.*/
             filters:
               branches:
-                only: deploy
+                only:
+                  - deploy
