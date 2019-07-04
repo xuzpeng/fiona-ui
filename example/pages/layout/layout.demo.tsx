@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import LayoutExample from './layout.example';
 import CodeEditor from '../../CodeEditor';
+import ReactMarkdown from "react-markdown";
 
 const editorStyle = {
   marginTop: 20, 
@@ -30,5 +31,6 @@ export default () => {
       style={editorStyle}
     >&lt;&nbsp;&gt;</span>
     <CodeEditor scaleY={y} value={rawCode} setRawCode={setRawCode}/>
+    <ReactMarkdown source={require('!!raw-loader!./layout.md').default} className="md"/>
   </Fragment>
 }
