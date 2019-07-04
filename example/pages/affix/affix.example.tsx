@@ -9,9 +9,6 @@ export default () => {
       <Affix offsetTop={120}>
         <Button type="primary">Affix</Button>
       </Affix>
-      <Affix offsetTop={20}>
-        <Button type="primary">Affix</Button>
-      </Affix>
     </div>
   </div>
 }
