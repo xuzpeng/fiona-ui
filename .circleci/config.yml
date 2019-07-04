@@ -66,11 +66,15 @@ workflows:
       - test:
           requires:
             - prepare
-#      - publish:
-#          requires:
-#            - build
-          # filters:
-          #   tags:
-          #     only: /^v[0-9]+(\.[0-9]+)*/
-          #   branches:
-          #     ignore: /.*/
+      - publish:
+          requires:
+            - build
+#           filters:
+#             tags:
+#               only: /^v[0-9]+(\.[0-9]+)*/
+#             branches:
+#               ignore: /.*/
+            filters:
+              branches:
+                only:
+                  - deploy
