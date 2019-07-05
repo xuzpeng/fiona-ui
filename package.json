@@ -1,6 +1,6 @@
 {
   "name": "fiona-ui",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "a react ui framework",
   "main": "dist/lib/index",
   "types": "dist/lib/index",
