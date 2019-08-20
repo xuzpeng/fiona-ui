@@ -11,23 +11,26 @@ interface IProps {
   onClick?: React.MouseEventHandler;
   children: string;
   icon?: string;
+  disable?: boolean;
 }
 
-const Button: React.FunctionComponent<IProps> = (props) => {
+const Button: React.FunctionComponent<IProps> = ({
+  type,
+  className,
+  icon,
+  children,
+  disable
+}) => {
   return (
-    <button 
-      style={props.style} 
-      className={combineClass(`f-button f-button-${props.type}`, props.className)}
-      onClick={(e) => {
-        e && e.preventDefault();
-        props.onClick && props.onClick(e);
-      }}  
+    <button
+      className={combineClass(`f-button f-button-${type}`, className, disable ? 'f-button-disabled' : '')}
+      disabled={disable}
     >
-      {
-        props.icon ? <Icon name={props.icon}/> : null
-      }
-      <span className={props.icon ? 'f-button-text' : ''}>
-        {props.children}
+      <React.Fragment>
+        {icon ? <Icon name={icon}/> : null}
+      </React.Fragment>
+      <span className={icon ? 'f-button-text' : ''}>
+        {children}
       </span>
     </button>
   )

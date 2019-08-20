@@ -52,4 +52,12 @@
   > .f-icon {
     vertical-align: -0.28em;
   }
+  &-disabled {
+    &:hover {
+      cursor: not-allowed;
+    }
+    &:active {
+      opacity: 1;
+    }
+  }
 }
