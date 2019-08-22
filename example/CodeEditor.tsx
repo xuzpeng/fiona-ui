@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Controlled as CodeMirror } from 'react-codemirror2';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
@@ -7,39 +7,71 @@ require('codemirror/mode/jsx/jsx');
 import './CodeEditor.scss';
 import 'codemirror/keymap/sublime';
 import 'codemirror/theme/dracula.css';
+import { CSSTransition } from 'react-transition-group';
+import Icon from '../lib/components/icon/icon';
 
 interface IProps {
   value: string;
   setRawCode: (value: string) => void;
-  scaleY?: number;
 }
 
+const editorStyle = {
+  margin: '20px 0', 
+  width: 40, 
+  height: 40,
+  display: 'flex',
+  borderRadius: '50%',
+  justifyContent: 'center',
+  alignItems: 'center',
+  opacity: 0.3,
+  cursor: 'pointer',
+  backgroundColor: '#ccc',
+  fontSize: 12,
+  transition: 'transform 0.5s'
+};
+
 const CodeEditor = (props: IProps) => {
+  const [show, setShow] = useState(true);
   return (
     <div
       style={{
         marginTop: 20,
-        transform: 'scaleY(' + props.scaleY + ')',
-        transition: 'transform 0.2s',
-        transformOrigin: 'left top',
         fontSize: '1.2em',
         lineHeight: 1.4,
         fontFamily: 'Hack, monospace'
       }}
     >
-      <CodeMirror
-        onBeforeChange={(editor, data, value) => props.setRawCode(value)}
-        value={props.value}
-        options={{
-          mode: 'jsx',
-          theme: 'dracula',
-          keyMap: 'sublime',
-          lineNumbers: true
+      <span 
+        style={{
+          ...editorStyle,
+          transform: `rotate(${show ? -180 : 0}deg)`
         }}
-        onChange={(editor, data, value) => {
+        onClick={() => setShow(!show)}
+      >
+        <Icon name="unfold" />
+      </span>
+      <CSSTransition
+        classNames="codemirror"
+        timeout={300}
+        in={show}
+        unmountOnExit
+        onEnter={() => setShow(true)}
+        onExited={() => setShow(false)}
+      >
+        <CodeMirror
+          onBeforeChange={(editor, data, value) => props.setRawCode(value)}
+          value={props.value}
+          options={{
+            mode: 'jsx',
+            theme: 'dracula',
+            keyMap: 'sublime',
+            lineNumbers: true
+          }}
+          onChange={(editor, data, value) => {
 
-        }}
-      />
+          }}
+        />
+      </CSSTransition>
     </div>
   )
 }

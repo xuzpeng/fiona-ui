@@ -94,11 +94,9 @@
     vertical-align: -0.28em;
   }
   &-disabled {
+    opacity: 0.7;
     &:hover {
       cursor: not-allowed;
-    }
-    &:active {
-      opacity: 1;
     }
   }
 }

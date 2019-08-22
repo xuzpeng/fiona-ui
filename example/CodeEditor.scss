@@ -1,3 +1,21 @@
 .CodeMirror {
   height: auto;
 }
+
+.codemirror-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.codemirror-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.codemirror-exit {
+  opacity: 1;
+}
+.codemirror-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
