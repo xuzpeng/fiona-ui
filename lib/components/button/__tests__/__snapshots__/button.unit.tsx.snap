@@ -2,8 +2,7 @@
 
 exports[`Button Component renders button component 1`] = `
 <button
-  className="f-button f-button-default"
-  onClick={[Function]}
+  className="f-button f-button-default f-button-ripple"
 >
   <span
     className=""
