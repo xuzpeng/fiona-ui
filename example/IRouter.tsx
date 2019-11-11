@@ -1,17 +1,49 @@
-import React, { Component } from 'react';
+import React, { Component, lazy, Suspense } from 'react';
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
-// import Home from './pages/home';
-import Button from './pages/button/button.demo';
-import Icon from './pages/icon/icon.demo';
-import Dialog from './pages/dialog/dialog.demo';
-import Layout from './pages/layout/layout.demo';
-import Input from './pages/input/input.demo';
-import Breadcrumb from './pages/breadcrumb/breadcrumb.demo';
-import Pagination from './pages/pagination/pagination.example';
-import Form from './pages/form/form.demo';
-import Loading from './pages/loading/loading.demo';
-import Affix from './pages/affix/affix.example';
 import App from './App';
+
+const routers = [
+  {
+    name: 'button',
+    path: './pages/button/button.demo'
+  },
+  {
+    name: 'icon',
+    path: './pages/icon/icon.demo'
+  },
+  {
+    name: 'dialog',
+    path: './pages/dialog/dialog.demo'
+  },
+  {
+    name: 'layout',
+    path: './pages/layout/layout.demo'
+  },
+  {
+    name: 'input',
+    path: './pages/input/input.demo'
+  },
+  {
+    name: 'breadcrumb',
+    path: './pages/breadcrumb/breadcrumb.demo'
+  },
+  {
+    name: 'pagination',
+    path: './pages/pagination/pagination.example'
+  },
+  {
+    name: 'form',
+    path: './pages/form/form.demo'
+  },
+  {
+    name: 'loading',
+    path: './pages/loading/loading.demo'
+  },
+  {
+    name: 'affix',
+    path: './pages/affix/affix.example'
+  }
+];
 
 export default class IRouter extends Component {
   render() {
@@ -21,16 +53,17 @@ export default class IRouter extends Component {
           <Switch>
             <Route path="/components" component={({match}: any) => (
               <Switch>
-                <Route path={`${match.url}/button`} component={Button} />
-                <Route path={`${match.url}/icon`} component={Icon} />
-                <Route path={`${match.url}/dialog`} component={Dialog} />
-                <Route path={`${match.url}/layout`} component={Layout} />
-                <Route path={`${match.url}/input`} component={Input} />
-                <Route path={`${match.url}/breadcrumb`} component={Breadcrumb} />
-                <Route path={`${match.url}/pagination`} component={Pagination} />
-                <Route path={`${match.url}/form`} component={Form} />
-                <Route path={`${match.url}/loading`} component={Loading} />
-                <Route path={`${match.url}/affix`} component={Affix} />
+                <Suspense fallback={<div>loading...</div>}>
+                  {
+                    routers.map(route => {
+                      return <Route
+                        key={route.name}
+                        path={`${match.url}/${route.name}`}
+                        component={lazy(() => import(`${route.path}`))}
+                      />
+                    })
+                  }
+                </Suspense>
               </Switch>
             )} />
             <Redirect to="/components/layout" />
