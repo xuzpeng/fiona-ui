@@ -14,6 +14,7 @@ export default () => {
       <Icon name="search" className="f-icon-example"/>
       <Icon name="setting" className="f-icon-example"/>
       <Icon name="wechat" className="f-icon-example"/>
+      <Icon name="unfold" className="f-icon-example"/>
     </div>
   )
 }

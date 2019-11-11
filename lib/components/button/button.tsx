@@ -11,21 +11,17 @@ interface IProps {
   onClick?: React.MouseEventHandler;
   children: string;
   icon?: string;
+  disabled?: boolean;
 }
 
 const Button: React.FunctionComponent<IProps> = (props) => {
   return (
-    <button 
-      style={props.style} 
-      className={combineClass(`f-button f-button-${props.type}`, props.className)}
-      onClick={(e) => {
-        e && e.preventDefault();
-        props.onClick && props.onClick(e);
-      }}  
+    <button
+      className={combineClass(`f-button f-button-${props.type}`, props.disabled  ? 'f-button-disabled' : 'f-button-ripple', props.className)}
+      onClick={props.onClick}
+      style={props.style}
     >
-      {
-        props.icon ? <Icon name={props.icon}/> : null
-      }
+      {props.icon ? <Icon name={props.icon}/> : null}
       <span className={props.icon ? 'f-button-text' : ''}>
         {props.children}
       </span>
