@@ -4,7 +4,7 @@ import combineClass from '../../helpers/combineClass';
 import PropTypes from 'prop-types';
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {
-  name: string;
+  name?: string;
   size?: string;
   message?: string;
   loading?: boolean;
@@ -41,7 +41,9 @@ Loading.propTypes = {
 }
 
 Loading.defaultProps = {
-  loading: true
+  loading: true,
+  name: 'spin',
+  size: 'medium'
 }
 
 export default Loading;

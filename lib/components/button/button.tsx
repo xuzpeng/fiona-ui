@@ -1,8 +1,8 @@
-import React, { CSSProperties } from 'react';
-import PropTypes from 'prop-types';
-import './botton.scss';
-import combineClass from '../../helpers/combineClass';
-import { Icon } from '../../../lib';
+import React, {CSSProperties} from 'react'
+import PropTypes from 'prop-types'
+import './botton.scss'
+import combineClass from '../../helpers/combineClass'
+import {Icon, Loading} from '../../../lib'
 
 interface IProps {
   type?: string;
@@ -12,16 +12,18 @@ interface IProps {
   children: string;
   icon?: string;
   disabled?: boolean;
+  loading?: boolean;
 }
 
 const Button: React.FunctionComponent<IProps> = (props) => {
   return (
     <button
-      className={combineClass(`f-button f-button-${props.type}`, props.disabled  ? 'f-button-disabled' : 'f-button-ripple', props.className)}
+      className={combineClass(`f-button f-button-${props.type}`, props.disabled ? 'f-button-disabled' : 'f-button-ripple', props.className)}
       onClick={props.onClick}
       style={props.style}
     >
-      {props.icon ? <Icon name={props.icon}/> : null}
+      {props.icon ? <Icon name={props.icon} /> : null}
+      {props.loading ? <Loading className='f-button-loading'/> : null}
       <span className={props.icon ? 'f-button-text' : ''}>
         {props.children}
       </span>
@@ -38,4 +40,4 @@ Button.defaultProps = {
   type: 'default'
 }
 
-export default Button;
+export default Button
