@@ -10,8 +10,8 @@
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
-    "doc": "cross-env NODE_ENV=production webpack --config webpack.config.doc.js",
+    "build": "rm -rf dist && cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+    "doc": "rm -rf doc && cross-env NODE_ENV=production webpack --config webpack.config.doc.js",
     "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.ci.js",
     "commit": "git add --all && git-cz"
   },
